@@ -1,97 +1,71 @@
-MOTION: TECNOLOGIA ASSISTIVA PARA INCLUSÃO E MOBILIDADE
-TRABALHO DE CONCLUSÃO DE CURSO (TCC) – DESENVOLVIMENTO DE SISTEMAS
+deixe melhor apresentavel sem emoji # MOTION: Tecnologia Assistiva para Inclusão e Mobilidade
 
-Este repositório contém o desenvolvimento do projeto MOTION (Mobility Oriented Technology Inclusive Orthopedic and Navigation), realizado na ETEC de Registro como parte dos requisitos para obtenção do diploma no curso de Desenvolvimento de Sistemas (DS).
+Este repositório contém o desenvolvimento do projeto MOTION (Mobility Oriented Technology Inclusive Orthopedic and Navigation), um Trabalho de Conclusão de Curso (TCC) realizado na ETEC de Registro como parte dos requisitos para obtenção do diploma no curso de Desenvolvimento de Sistemas (DS).
 
-O projeto tem como objetivo aplicar, de forma prática, conhecimentos adquiridos ao longo do curso, desenvolvendo uma solução funcional, organizada e documentada voltada à tecnologia assistiva para crianças com paralisia cerebral, promovendo inclusão, autonomia, comunicação e mobilidade.
+O projeto tem como objetivo aplicar na prática os conhecimentos adquiridos ao longo do curso, desenvolvendo uma solução funcional, organizada e documentada para auxiliar crianças com paralisia cerebral, promovendo autonomia, comunicação e mobilidade.
 
-OBJETIVO DO PROJETO
-SOLUÇÃO PARA ACESSIBILIDADE E AUTONOMIA
+ Objetivo do Projeto
 
-O principal objetivo do MOTION é reduzir barreiras físicas e comunicacionais por meio da tecnologia, integrando software e hardware em uma solução única.
+O principal objetivo deste trabalho é resolver o desafio da exclusão e da limitação física por meio da tecnologia. O MOTION integra duas frentes de alto impacto:
+1. Comunicação Alternativa: Uma plataforma digital para que a criança expresse necessidades e sentimentos.
+2. Desenvolvimento da Mobilidade: Um exoesqueleto motorizado acoplado a um andador para suporte mecânico e incentivo à marcha.
 
-O projeto é dividido em duas frentes principais:
-Comunicação Alternativa Digital: plataforma que permite à criança expressar necessidades, sentimentos e comandos de forma acessível.
-Assistência à Mobilidade Física: sistema de exoesqueleto motorizado acoplado a um andador, oferecendo suporte estrutural e incentivo à marcha.
-PROBLEMA ABORDADO
-PARALISIA CEREBRAL E LIMITAÇÕES FUNCIONAIS
+ O Problema: Desafios da Paralisia Cerebral
 
-A paralisia cerebral afeta o controle neuromuscular e motor, sendo comum a presença de rigidez muscular (paralisia espástica), o que pode comprometer:
+A paralisia cerebral afeta a função neuromuscular e, em 77% dos casos (paralisia espástica), causa rigidez muscular que compromete a fala (disartria) e a locomoção. O MOTION substitui as tradicionais pranchas de papel por uma solução tecnológica que une reabilitação física e interação social em tempo real.
 
-A fala (disartria)
-A locomoção
-A interação social
+ A Solução Integrada
 
-O projeto propõe uma alternativa às soluções tradicionais, como pranchas de comunicação, por meio de uma abordagem tecnológica integrada, mais eficiente e interativa.
+Plataforma M.O.T.I.O.N (Software)
+Interface acessível desenvolvida para comunicação rápida entre a criança e seus responsáveis.
+* Frases Pré-definidas: Facilita a interação imediata.
+* Histórico e Favoritos: Acesso rápido às mensagens mais utilizadas.
+* Botão Físico Programável: Permite que a criança acione frases de voz através de botões instalados no andador.
 
-SOLUÇÃO PROPOSTA
-SISTEMA M.O.T.I.O.N
-Plataforma de Comunicação (Software)
+Exoesqueleto e Andador (Hardware)
+* Suporte e Estabilidade: O exoesqueleto fornece a sustentação necessária para que a criança permaneça em pé.
+* Movimento Motorizado: Incentiva o desenvolvimento locomotor e a aprendizagem da marcha.
+* Comunicação em Movimento: Botões integrados ao andador permitem que a criança se comunique sem interromper suas atividades de reabilitação.
 
-Sistema digital desenvolvido para facilitar a comunicação entre a criança e seus responsáveis.
+ Tecnologias Utilizadas
 
-Frases pré-definidas para comunicação rápida
-Histórico de mensagens e favoritos
-Integração com botões físicos programáveis
-Sistema de Mobilidade (Hardware)
+* Mobile: React Native com Expo (JavaScript/TypeScript).
+* Hardware: Arduino (C/C++) para controle de botões físicos e sensores.
+* Backend/API: Python (Flask) para integração, Pygame para reprodução de áudio e PySerial para comunicação serial.
+* Banco de Dados: MySQL (via XAMPP).
+* Síntese de Voz: ElevenLabs (para geração de áudios naturais).
 
-Estrutura mecânica e eletrônica integrada ao andador.
+ Alinhamento com os ODS (ONU)
 
-Suporte físico para estabilidade e postura
-Sistema motorizado para auxílio na marcha
-Botões físicos integrados para comunicação durante o movimento
-TECNOLOGIAS UTILIZADAS
-DESENVOLVIMENTO DO SISTEMA
-Mobile: React Native com Expo (JavaScript / TypeScript)
-Hardware: Arduino (C / C++) para controle de botões e sensores
-Backend: Python (Flask, PySerial, Pygame) para integração e comunicação
-Banco de Dados: MySQL (via XAMPP)
-Síntese de Voz: ElevenLabs para geração de áudio natural
-OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL (ODS)
-ALINHAMENTO COM A ONU
-ODS 3 – Saúde e Bem-Estar: aplicação de tecnologia assistiva para reabilitação motora e qualidade de vida.
-ODS 4 – Educação de Qualidade: incentivo à inclusão e ao desenvolvimento comunicativo.
-ESTRUTURA DO PROJETO
-ORGANIZAÇÃO DO REPOSITÓRIO
-/appTCC              Código-fonte do aplicativo mobile (Expo)
-/tcc_arduino         Firmware do Arduino (.ino)
-/tcc_php             Backend Python, integração e arquivos de áudio
-/bd_comunicacao.sql  Script do banco de dados MySQL
-/assets              Recursos visuais, ícones e mídias
-COMO EXECUTAR O PROJETO
-PASSO A PASSO DE INSTALAÇÃO
-Banco de Dados
+O projeto está alinhado aos Objetivos de Desenvolvimento Sustentável:
+* ODS 3 (Saúde e Bem-Estar): Tecnologias assistivas para reabilitação motora.
+* ODS 4 (Educação de Qualidade): Ferramentas que favorecem a inclusão e o aprendizado.
 
-Importar o arquivo bd_comunicacao.sql no MySQL.
+ Estrutura do Projeto
 
-Hardware
+/appTCC            -> Código-fonte do aplicativo mobile (Expo)
+/tcc_arduino       -> Firmware do Arduino (.ino)
+/tcc_php           -> Backend Python, scripts de integração e arquivos de som
+/bd_comunicacao.sql -> Script SQL para criação do banco de dados
+/assets            -> Recursos visuais, ícones e mídias
 
-Carregar o arquivo tcc_arduino.ino na placa Arduino.
+Como Executar
 
-Backend
+1. Banco de Dados: Importe o arquivo bd_comunicacao.sql no MySQL.
+2. Hardware: Carregue o código /tcc_arduino/tcc_arduino.ino na sua placa Arduino.
+3. Backend: Na pasta /tcc_php, instale as dependências (pip install Flask Flask-Cors mysql-connector-python pygame pyserial) e execute python sistema_motion_full.py.
+4. App: Na pasta /appTCC, execute npm install e depois npm start.
 
-Na pasta /tcc_php, instalar dependências:
+Status do Projeto
+ Em desenvolvimento
 
-pip install Flask Flask-Cors mysql-connector-python pygame pyserial
-
-Executar:
-
-python sistema_motion_full.py
-Aplicativo
-
-Na pasta /appTCC:
-
-npm install
-npm start
-STATUS DO PROJETO
-
-Concluído / Em desenvolvimento
-
-AUTORES
-EQUIPE DE DESENVOLVIMENTO
-Julia Ribeiro Lemos
-Julia Souza Hoffmann
-Mateus Flórido Pena
+ Autores
+* Julia Ribeiro Lemos
+* Julia Souza Hoffmann
+* Mateus Flórido Pena
 
 Curso: Desenvolvimento de Sistemas (DS)
 Instituição: ETEC de Registro
+
+---
+Projeto desenvolvido com foco em acessibilidade, seguindo as melhores práticas de engenharia de software.
