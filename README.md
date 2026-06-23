@@ -11,14 +11,14 @@ O projeto aplica de forma prática os conceitos de engenharia de software, desen
 
 O MOTION busca mitigar as barreiras impostas pela limitação física e pela exclusão social por meio de uma abordagem tecnológica integrada, dividida em duas frentes principais:
 
-1. **Comunicação Alternativa:** Uma plataforma digital acessível que permite à criança expressar suas necessidades, sentimentos e escolhas do dia a dia.
+1. **Comunicação Alternativa:** Uma plataforma digital acessível que permite à criança expressar as suas necessidades, sentimentos e escolhas do dia a dia.
 2. **Desenvolvimento da Mobilidade:** Um sistema mecânico e motorizado (exoesqueleto acoplado a um andador) que oferece suporte vertical e estímulo ativo para o treinamento da marcha.
 
 ---
 
 ## Contexto e Problemática
 
-A paralisia cerebral engloba um grupo de distúrbios crônicos que afetam o desenvolvimento motor e a postura. Em cerca de 77% dos casos, manifesta-se na forma espástica, caracterizada pela rigidez muscular que compromete severamente a fala (disartria) e a locomoção independente.
+A paralisia cerebral engloba um grupo de distúrbios crónicos que afetam o desenvolvimento motor e a postura. Em cerca de 77% dos casos, manifesta-se na forma espástica, caracterizada pela rigidez muscular que compromete severamente a fala (disartria) e a locomoção independente.
 
 O MOTION substitui os métodos tradicionais e estáticos de comunicação — como as pranchas físicas de papel — por um ecossistema dinâmico que une a reabilitação física à interação social e digital em tempo real.
 
@@ -30,7 +30,7 @@ O sistema é composto pela integração sinérgica entre software e hardware:
 
 ### Plataforma M.O.T.I.O.N. (Software Mobile)
 
-Interface projetada com foco em acessibilidade para permitir a comunicação rápida entre o usuário e seus responsáveis.
+Interface projetada com foco em acessibilidade para permitir a comunicação rápida entre o utilizador e os seus responsáveis.
 
 * **Frases Pré-definidas:** Módulos de comunicação rápida para necessidades imediatas.
 * **Histórico e Favoritos:** Mecanismo de busca e acesso ágil às expressões mais utilizadas.
@@ -53,7 +53,7 @@ Interface projetada com foco em acessibilidade para permitir a comunicação rá
 | **Backend / API** | Python (Flask) | Processamento central, gerenciamento de requisições e integração de serviços. |
 | **Comunicação Serial** | PySerial | Interface de comunicação direta entre o script Python e a placa Arduino. |
 | **Multimídia** | Pygame | Gerenciamento e reprodução local dos arquivos de áudio. |
-| **Banco de Dados** | MySQL (via XAMPP) | Armazenamento estruturado de usuários, logs e mensagens. |
+| **Banco de Dados** | MySQL (via XAMPP) | Armazenamento estruturado de utilizadores, logs e mensagens. |
 | **Síntese de Voz** | API ElevenLabs | Geração de vozes sintetizadas de alta fidelidade e sonoridade natural. |
 
 ---
@@ -72,10 +72,12 @@ O desenvolvimento do MOTION está diretamente conectado à Agenda 2030 da Organi
 ```text
 .
 ├── /appTCC                 # Código-fonte do aplicativo mobile em React Native (Expo)
+├── /script_tcc             # Scripts, API e código de integração em Python
+├── /sons_tcc               # Arquivos de áudio e efeitos sonoros utilizados pelo sistema
 ├── /tcc_arduino            # Firmware e código de controle da placa Arduino (.ino)
-├── /tcc_php                # Ambiente do backend em Python, scripts e acervo de áudio
-├── /bd_comunicacao.sql     # Script estrutural do banco de dados MySQL
-└── /assets                 # Identidade visual, logotipos, ícones e mídias gerais
+├── /tcc_php                # Scripts complementares e serviços de backend anteriores
+├── bd_comunicacao.sql      # Script estrutural do banco de dados MySQL
+└── README.md               # Documentação principal do projeto
 
 ```
 
@@ -93,12 +95,12 @@ Importe o arquivo `bd_comunicacao.sql` no seu gerenciador de banco de dados MySQ
 
 Abra a IDE do Arduino, localize o arquivo contido em `/tcc_arduino/tcc_arduino.ino` e faça o upload para a placa microcontroladora conectada ao andador.
 
-### 3. Backend e Integração
+### 3. Backend e Integração (Python)
 
-Navegue até o diretório do backend e instale as dependências necessárias utilizando o gerenciador de pacotes do Python:
+Navegue até o diretório de scripts Python e instale as dependências necessárias utilizando o gerenciador de pacotes:
 
 ```bash
-cd tcc_php
+cd script_tcc
 pip install Flask Flask-Cors mysql-connector-python pygame pyserial
 python sistema_motion_full.py
 
