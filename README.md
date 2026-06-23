@@ -1,4 +1,4 @@
-deixe melhor apresentavel sem emoji # MOTION: Tecnologia Assistiva para Inclusão e Mobilidade
+ # MOTION: Tecnologia Assistiva para Inclusão e Mobilidade
 
 Este repositório contém o desenvolvimento do projeto MOTION (Mobility Oriented Technology Inclusive Orthopedic and Navigation), um Trabalho de Conclusão de Curso (TCC) realizado na ETEC de Registro como parte dos requisitos para obtenção do diploma no curso de Desenvolvimento de Sistemas (DS).
 
