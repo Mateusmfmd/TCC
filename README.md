@@ -1,6 +1,3 @@
-Aqui está uma versão reestruturada e profissional para o arquivo `README.md` do seu repositório. O texto foi refinado para adotar um tom mais formal e acadêmico (ideal para um Trabalho de Conclusão de Curso), a hierarquia visual foi otimizada com o uso de tabelas e blocos de código, e todos os emojis foram removidos conforme solicitado.
-
----
 
 # MOTION: Tecnologia Assistiva para Inclusão e Mobilidade
 
