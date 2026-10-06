@@ -1,0 +1,3 @@
+# Descrição para a seção Projetos do LinkedIn (500 a 700 caracteres)
+
+arduino-botoes — painel físico com 5 botões coloridos e 1 sensor ultrassônico em Arduino, criado para o TCC M.O.T.I.O.N. (comunicação alternativa). Resolve a necessidade de um acionador simples para quem não consegue usar a tela: cada botão ou aproximação da mão envia o nome da cor pela serial, e o sistema toca o áudio associado. O código usa INPUT_PULLUP, detecção de borda para disparar uma única vez por aperto e histerese no sensor para evitar disparos repetidos. Tecnologias: Arduino, C++ e comunicação serial. Código: https://github.com/Mateusmfmd/arduino-botoes

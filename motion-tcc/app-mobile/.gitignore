@@ -1,0 +1,40 @@
+# Dependências
+node_modules/
+
+# Segredos e configuração local da API — o template versionado é o .env.example
+.env
+.env.local
+.env.*.local
+
+# Caches e artefatos gerados pelo Expo/Metro (recriáveis com `npx expo start -c`)
+.expo/
+dist/
+web-build/
+.expo-verify/
+
+# Arquivos nativos gerados pelo `expo prebuild`
+android/app/build/
+android/.gradle/
+android/build/
+android/local.properties
+ios/Pods/
+ios/build/
+*.jks
+*.keystore
+*.mobileprovision
+*.orig.*
+*.p12
+
+# Logs e relatórios de build
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+build-log.json
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

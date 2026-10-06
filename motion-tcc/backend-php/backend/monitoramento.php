@@ -1,0 +1,9 @@
+<?php
+require_once 'config.php'; require_once 'helpers.php';
+if($_SERVER['REQUEST_METHOD']!=='GET')erro('Método não permitido',405);
+$u=exigirSessao($conn,$_GET['token']??'');if(empty($_GET['crianca_id']))erro('crianca_id é obrigatório');exigirCriancaDoUsuario($conn,(int)$_GET['crianca_id'],$u['id_usuario']);$id=(int)$_GET['crianca_id'];$dias=max(1,min(365,(int)($_GET['dias']??7)));
+$a=[];$r=$conn->query("SELECT texto,emoji,COUNT(*) total FROM historico_comunicacao WHERE crianca_id=$id AND data_uso>=DATE_SUB(NOW(),INTERVAL $dias DAY) GROUP BY texto,emoji ORDER BY total DESC LIMIT 8");while($x=$r->fetch_assoc())$a[]=$x;
+$b=[];$r=$conn->query("SELECT DATE(data_uso) dia,COUNT(*) total FROM historico_comunicacao WHERE crianca_id=$id AND data_uso>=DATE_SUB(NOW(),INTERVAL $dias DAY) GROUP BY DATE(data_uso) ORDER BY dia");while($x=$r->fetch_assoc())$b[]=$x;
+$total=(int)$conn->query("SELECT COUNT(*) total FROM rotinas WHERE crianca_id=$id")->fetch_assoc()['total'];$c=[];$r=$conn->query("SELECT data_execucao dia,COUNT(*) total FROM rotina_execucoes re JOIN rotinas rt ON rt.id_rotina=re.rotina_id WHERE rt.crianca_id=$id AND data_execucao>=DATE_SUB(CURDATE(),INTERVAL $dias DAY) GROUP BY data_execucao ORDER BY dia");while($x=$r->fetch_assoc()){$x['total_rotinas']=$total;$c[]=$x;}
+$lr=$conn->query("SELECT COUNT(*) total,SUM(feito) concluidos FROM lembretes WHERE crianca_id=$id")->fetch_assoc();$h=[];$r=$conn->query("SELECT humor,emoji,data_registro FROM mood_log WHERE crianca_id=$id AND data_registro>=DATE_SUB(NOW(),INTERVAL $dias DAY) ORDER BY data_registro");while($x=$r->fetch_assoc())$h[]=$x;
+$res=['success'=>true,'periodo_dias'=>$dias,'total_falas'=>array_sum(array_column($b,'total')),'mais_usados'=>$a,'falas_por_dia'=>$b,'rotinas_por_dia'=>$c,'total_rotinas'=>$total,'lembretes_resumo'=>['total'=>(int)$lr['total'],'concluidos'=>(int)($lr['concluidos']??0)],'humor'=>$h];responder($res);

@@ -1,0 +1,3 @@
+# Descrição para a seção Projetos do LinkedIn (500 a 700 caracteres)
+
+arduino-sensores — acionador sem contato com 3 sensores ultrassônicos em Arduino, criado para o TCC M.O.T.I.O.N. (comunicação alternativa). Resolve a necessidade de quem não consegue apertar botões: aproximar a mão de um sensor envia o nome da cor pela serial e o sistema toca o áudio associado. O código usa mediana de 3 leituras para filtrar interferência, histerese para disparar uma única vez por aproximação e uma função reutilizada pelos três sensores. Tecnologias: Arduino, C++ e comunicação serial. Código: https://github.com/Mateusmfmd/arduino-sensores

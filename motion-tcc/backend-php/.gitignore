@@ -1,0 +1,7 @@
+.env
+backend/uploads/pictogramas/*
+!backend/uploads/pictogramas/.gitkeep
+backend/sons/start_signal.txt
+__pycache__/
+*.pyc
+.DS_Store

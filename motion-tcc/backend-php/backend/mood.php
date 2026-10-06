@@ -1,0 +1,6 @@
+<?php
+require_once 'config.php'; require_once 'helpers.php';
+$m=$_SERVER['REQUEST_METHOD'];
+if($m==='GET'){$u=exigirSessao($conn,$_GET['token']??'');if(empty($_GET['crianca_id']))erro('crianca_id é obrigatório');exigirCriancaDoUsuario($conn,(int)$_GET['crianca_id'],$u['id_usuario']);$id=(int)$_GET['crianca_id'];$dias=max(1,min(365,(int)($_GET['dias']??14)));$r=$conn->query("SELECT humor,emoji,data_registro FROM mood_log WHERE crianca_id=$id AND data_registro>=DATE_SUB(NOW(),INTERVAL $dias DAY) ORDER BY data_registro ASC");$a=[];while($x=$r->fetch_assoc())$a[]=$x;responder(['success'=>true,'registros'=>$a]);}
+if($m==='POST'){$d=corpoJson();if(empty($d['crianca_id'])||empty($d['humor']))erro('crianca_id e humor são obrigatórios');if(!empty($d['device_secret']))exigirDispositivoPareado($conn,$d['device_secret']);else{$u=exigirSessao($conn,$d['token']??'');exigirCriancaDoUsuario($conn,(int)$d['crianca_id'],$u['id_usuario']);}$e=$d['emoji']??'';$st=$conn->prepare("INSERT INTO mood_log (crianca_id,humor,emoji) VALUES (?,?,?)");$st->bind_param("iss",$d['crianca_id'],$d['humor'],$e);$st->execute();responder(['success'=>true,'message'=>'Humor registrado']);}
+erro('Método não permitido',405);
