@@ -1,3 +1,0 @@
-# Descrição para a seção Projetos do LinkedIn (500 a 700 caracteres)
-
-M.O.T.I.O.N. — aplicativo de comunicação alternativa para crianças com paralisia cerebral, feito como TCC do curso Técnico em Desenvolvimento de Sistemas. Resolve a dificuldade de se comunicar e seguir a rotina com pictogramas, frases faladas, rotinas e lembretes, com modo responsável e modo criança (varredura, alto contraste e funcionamento offline). Inclui API em PHP com MySQL e Docker e botões em Arduino ligados por uma ponte em Python. Tecnologias: React Native (Expo), JavaScript, PHP, MySQL, Docker, Python e Arduino/C++. Código: https://github.com/Mateusmfmd/motion-tcc
